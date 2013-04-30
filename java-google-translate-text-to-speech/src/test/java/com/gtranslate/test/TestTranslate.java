@@ -7,7 +7,7 @@ import com.gtranslate.context.EnvUtil;
 
 public class TestTranslate {
 
-	public String enableProxy = "true";
+	public String enableProxy = "false";
 	public String proxy = "my.proxy.com";
 	public String port= "8080";
 	public String googleTranslateText = "http://translate.google.com.{locale}/translate_a/t?";

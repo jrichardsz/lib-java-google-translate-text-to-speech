@@ -16,7 +16,7 @@ public class TestTranslate {
 	public String locale = "pe";		
 	
 	@Test
-	public void test() throws Exception {
+	public void testTranslateAsJsonString() throws Exception {
 
 		EnvUtil.environmentInit(enableProxy, proxy, port, googleTranslateText, googleTranslateAudio, googleTranslateDetect, locale);
 		
@@ -25,6 +25,17 @@ public class TestTranslate {
 		System.out.println(trans.translateAsJsonString(text, "es", "en"));
 	
 	}
+	
+	@Test
+	public void testTranslate() throws Exception {
+
+		EnvUtil.environmentInit(enableProxy, proxy, port, googleTranslateText, googleTranslateAudio, googleTranslateDetect, locale);
+		
+		Translator trans = Translator.getInstance();
+		String text = "hola";
+		System.out.println(trans.translate(text, "es", "en"));
+	
+	}	
 	
 
 

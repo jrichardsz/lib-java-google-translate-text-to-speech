@@ -10,7 +10,7 @@ package com.gtranslate.parsing;
  */
 
 import com.gtranslate.context.Const;
-import com.gtranslate.context.EnvUtil;
+import com.gtranslate.context.TranslatorEnvironmentUtil;
 import com.gtranslate.text.Text;
 import com.gtranslate.text.TextTranslate;
 import com.gtranslate.utils.WebUtils;
@@ -60,7 +60,7 @@ public class ParseTextTranslate implements Parse {
                 Text input = textTranslate.getInput();
                 Text output = textTranslate.getOutput();
                 //correcction of google api: dynamic URL and not just br : http://translate.google.com.br/translate_a/t?
-                url = new StringBuilder(EnvUtil.getSystemProperty(Const.GOOGLE_TRANSLATE_TEXT).replace(".{locale}", "."+EnvUtil.getSystemProperty(Const.LOCALE)));
+                url = new StringBuilder(TranslatorEnvironmentUtil.getSystemProperty(Const.GOOGLE_TRANSLATE_TEXT).replace(".{locale}", "."+TranslatorEnvironmentUtil.getSystemProperty(Const.LOCALE)));
                 url.append("client=t&text=" + input.getText().replace(" ", "%20"));
                 url.append("&hl=" + input.getLanguage());
                 url.append("&sl=" + input.getLanguage());

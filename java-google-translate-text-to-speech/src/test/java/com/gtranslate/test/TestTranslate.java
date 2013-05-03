@@ -3,7 +3,7 @@ package com.gtranslate.test;
 import org.junit.Test;
 
 import com.gtranslate.Translator;
-import com.gtranslate.context.EnvUtil;
+import com.gtranslate.context.TranslatorEnvironmentUtil;
 
 public class TestTranslate {
 
@@ -18,7 +18,7 @@ public class TestTranslate {
 	@Test
 	public void testTranslateAsJsonString() throws Exception {
 
-		EnvUtil.environmentInit(enableProxy, proxy, port, googleTranslateText, googleTranslateAudio, googleTranslateDetect, locale);
+		TranslatorEnvironmentUtil.initialize(enableProxy, proxy, port, googleTranslateText, googleTranslateAudio, googleTranslateDetect, locale);
 		
 		Translator trans = Translator.getInstance();
 		String text = "hola";
@@ -29,7 +29,7 @@ public class TestTranslate {
 	@Test
 	public void testTranslate() throws Exception {
 
-		EnvUtil.environmentInit(enableProxy, proxy, port, googleTranslateText, googleTranslateAudio, googleTranslateDetect, locale);
+		TranslatorEnvironmentUtil.initialize(enableProxy, proxy, port, googleTranslateText, googleTranslateAudio, googleTranslateDetect, locale);
 		
 		Translator trans = Translator.getInstance();
 		String text = "hola";

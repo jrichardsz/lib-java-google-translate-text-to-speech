@@ -1,7 +1,7 @@
 package com.gtranslate.parsing;
 
 import com.gtranslate.context.Const;
-import com.gtranslate.context.EnvUtil;
+import com.gtranslate.context.TranslatorEnvironmentUtil;
 import com.gtranslate.text.Text;
 import com.gtranslate.utils.WebUtils;
 
@@ -18,7 +18,7 @@ public class ParseTextDetect implements Parse {
 	
 	public void appendURL() throws Exception {
 
-		stbUrl = new StringBuilder(EnvUtil.getSystemProperty(Const.GOOGLE_TRANSLATE_DETECT));
+		stbUrl = new StringBuilder(TranslatorEnvironmentUtil.getSystemProperty(Const.GOOGLE_TRANSLATE_DETECT));
 		stbUrl.append("v=1.0&");
 		stbUrl.append("q=" + input.getLanguage().replace(" ", "%20"));
 

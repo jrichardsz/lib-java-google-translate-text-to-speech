@@ -19,7 +19,7 @@ import java.net.URL;
 import java.net.URLConnection;
 
 import com.gtranslate.context.Const;
-import com.gtranslate.context.EnvUtil;
+import com.gtranslate.context.TranslatorEnvironmentUtil;
 
 
 public class WebUtils {
@@ -53,9 +53,9 @@ public class WebUtils {
        
         try{            
                    
-	        if(Boolean.valueOf(EnvUtil.getSystemProperty(Const.ENABLE_PROXY))){
+	        if(Boolean.valueOf(TranslatorEnvironmentUtil.getSystemProperty(Const.ENABLE_PROXY))){
 	        	
-	             Proxy prox = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(EnvUtil.getSystemProperty(Const.PROXY),Integer.parseInt(EnvUtil.getSystemProperty(Const.PORT))));           
+	             Proxy prox = new Proxy(Proxy.Type.HTTP, new InetSocketAddress(TranslatorEnvironmentUtil.getSystemProperty(Const.PROXY),Integer.parseInt(TranslatorEnvironmentUtil.getSystemProperty(Const.PORT))));           
 	             return url.openConnection(prox);
 	        	             
 	        }else {

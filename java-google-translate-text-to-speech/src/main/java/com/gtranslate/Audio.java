@@ -9,7 +9,7 @@ import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 
 import com.gtranslate.context.Const;
-import com.gtranslate.context.EnvUtil;
+import com.gtranslate.context.TranslatorEnvironmentUtil;
 
 public class Audio {
 	private static Audio audio;
@@ -28,7 +28,7 @@ public class Audio {
 	public InputStream getAudio(String text, String languageOutput)
 			throws Exception {
 		
-		URL url = new URL(EnvUtil.getSystemProperty(Const.GOOGLE_TRANSLATE_AUDIO) + "q="+ text.replace(" ", "%20") + "&tl=" + languageOutput);
+		URL url = new URL(TranslatorEnvironmentUtil.getSystemProperty(Const.GOOGLE_TRANSLATE_AUDIO) + "q="+ text.replace(" ", "%20") + "&tl=" + languageOutput);
 		URLConnection urlConn = url.openConnection();
 		urlConn.addRequestProperty("User-Agent","Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");
 		InputStream audioSrc = urlConn.getInputStream();

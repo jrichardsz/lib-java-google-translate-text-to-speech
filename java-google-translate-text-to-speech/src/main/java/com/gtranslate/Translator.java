@@ -10,18 +10,6 @@ import com.gtranslate.text.Text;
 import com.gtranslate.text.TextTranslate;
 
 public class Translator {
-	
-	private static Translator translator;
-
-
-	public synchronized static Translator getInstance() {
-
-		if (translator == null) {
-			translator = new Translator();
-		}
-		return translator;
-
-	}
 
 	public void translate(TextTranslate textTranslate) throws Exception {
 

@@ -20,7 +20,7 @@ public class TestTranslate {
 
 		TranslatorEnvironmentUtil.initialize(enableProxy, proxy, port, googleTranslateText, googleTranslateAudio, googleTranslateDetect, locale);
 		
-		Translator trans = Translator.getInstance();
+		Translator trans = new Translator();
 		String text = "hola";
 		System.out.println(trans.translateAsJsonString(text, "es", "en"));
 	
@@ -31,7 +31,7 @@ public class TestTranslate {
 
 		TranslatorEnvironmentUtil.initialize(enableProxy, proxy, port, googleTranslateText, googleTranslateAudio, googleTranslateDetect, locale);
 		
-		Translator trans = Translator.getInstance();
+		Translator trans = new Translator();
 		String text = "hola";
 		System.out.println(trans.translate(text, "es", "en"));
 	

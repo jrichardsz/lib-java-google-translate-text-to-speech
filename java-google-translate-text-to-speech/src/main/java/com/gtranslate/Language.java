@@ -218,7 +218,7 @@ public class Language {
 
 	public String getNameLanguage(String prefixLanguage, String outputLanguage) throws Exception {
 
-		Translator translate = Translator.getInstance();
+		Translator translate = new Translator();
 		return translate.translate(hashLanguage.get(prefixLanguage),
 				prefixLanguage, outputLanguage);
 

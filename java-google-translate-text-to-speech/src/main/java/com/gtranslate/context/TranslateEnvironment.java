@@ -1,8 +1,8 @@
 package com.gtranslate.context;
 
-public class TranslatorEnvironmentUtil {
+public class TranslateEnvironment {
 
-    public static void initialize(String enableProxy, String proxy, String port, String googleTranslateText, String googleTranslateAudio,String googleTranslateDetect,String locale)
+    public static void init(String enableProxy, String proxy, String port, String googleTranslateText, String googleTranslateAudio,String googleTranslateDetect,String locale)
 	{
     	
     	System.getProperties().put(Const.ENABLE_PROXY,enableProxy);

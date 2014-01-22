@@ -2,14 +2,13 @@ package com.gtranslate.test;
 
 import org.junit.Test;
 
-import com.gtranslate.Audio;
 import com.gtranslate.Translator;
-import com.gtranslate.context.TranslatorEnvironmentUtil;
+import com.gtranslate.context.TranslateEnvironment;
 
 public class TestTranslate {
 
-	public String enableProxy = "true";
-	public String proxy = "chqprx05.cngfinancial.com";
+	public String enableProxy = "false";
+	public String proxy = "my.proxy.com";
 	public String port= "8080";
 	public String googleTranslateText = "http://translate.google.com.{locale}/translate_a/t?";
 	public String googleTranslateAudio = "http://translate.google.com/translate_tts?";
@@ -19,9 +18,9 @@ public class TestTranslate {
 	@Test
 	public void testTranslateAsJsonString() throws Exception {
 
-		TranslatorEnvironmentUtil.initialize(enableProxy, proxy, port, googleTranslateText, googleTranslateAudio, googleTranslateDetect, locale);
+		TranslateEnvironment.init(enableProxy, proxy, port, googleTranslateText, googleTranslateAudio, googleTranslateDetect, locale);
 		
-		Translator trans = new Translator();
+		Translator trans = Translator.getInstance();
 		String text = "hola";
 		System.out.println(trans.translateAsJsonString(text, "es", "en"));
 	
@@ -30,24 +29,13 @@ public class TestTranslate {
 	@Test
 	public void testTranslate() throws Exception {
 
-		TranslatorEnvironmentUtil.initialize(enableProxy, proxy, port, googleTranslateText, googleTranslateAudio, googleTranslateDetect, locale);
+		TranslateEnvironment.init(enableProxy, proxy, port, googleTranslateText, googleTranslateAudio, googleTranslateDetect, locale);
 		
-		Translator trans = new Translator();
+		Translator trans = Translator.getInstance();
 		String text = "hola";
 		System.out.println(trans.translate(text, "es", "en"));
 	
 	}	
-	
-	@Test
-	public void testAudioTranslate() throws Exception {
-
-		TranslatorEnvironmentUtil.initialize(enableProxy, proxy, port, googleTranslateText, googleTranslateAudio, googleTranslateDetect, locale);
-		
-		Audio audio = new Audio();
-		audio.play("hola, como estas Richard?", "es");
-		
-	
-	}		
 	
 
 

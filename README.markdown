@@ -58,7 +58,7 @@ System.out.println(trans.translate(text, "es", "en"));
 // console output
 hi there
 
-// this  code converts the string to a sound
+// this  code converts the string to a sound and plays
 Audio audio = Audio.getInstance();
 InputStream sound = audio.getAudio("Hello Richard","en");
 audio.play(sound);

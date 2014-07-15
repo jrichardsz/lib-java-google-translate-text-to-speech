@@ -24,6 +24,10 @@ The application in the future will provide the following functions
 
 
 ```java
+//imports
+import com.gtranslate.Translator;
+import com.gtranslate.context.TranslateEnvironment;
+
 //required values
 String enableProxy = "false";
 String proxy = "my.proxy.com";

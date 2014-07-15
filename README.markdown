@@ -1,4 +1,4 @@
-#fork-java-google-translate-text-to-speech
+#Fork-java-google-translate-text-to-speech
 
 A fork and improvement of proyect java-google-translate-text-to-speech TTS. http://code.google.com/p/java-google-translate-text-to-speech/
 
@@ -40,7 +40,8 @@ String locale = "pe";
 //initializing
 TranslateEnvironment.init(enableProxy, proxy, port, googleTranslateText, googleTranslateAudio, googleTranslateDetect, locale);
 
-//do it!
+// this code get response of google engine
+
 Translator trans = Translator.getInstance();
 String text = "hola";
 System.out.println(trans.translateAsJsonString(text, "es", "en"));
@@ -48,7 +49,7 @@ System.out.println(trans.translateAsJsonString(text, "es", "en"));
 // console output
 [[["hi there","hola","",""]],[["interjección",["Hello!","Hi!","Hey!","Hullo!","Hallo!","Hoy!","Hail!"],[["Hello!",["¡Hola!","¡Caramba!","¡Oiga!","¡Diga!","¡Bueno!","¡Vale!"],,0.39160562],["Hi!",["¡Hola!"],,0.24506053],["Hey!",["¡Hola!","¡Eh!"],,0.038173068],["Hullo!",["¡Hola!","¡Caramba!","¡Oiga!","¡Diga!","¡Bueno!","¡Aló!"]],["Hallo!",["¡Hola!","¡Caramba!","¡Oiga!","¡Bueno!"]],["Hoy!",["¡Eh!","¡Hola!"]],["Hail!",["¡Salve!","¡Hola!"]]],"¡Hola!",9]],"es",,[["hi there",[1],true,false,634,0,2,0]],[["hola",1,[["hi there",634,true,false],["hello there",261,true,false],["Hey there",103,true,false],["hello",0,true,false],["hi",0,true,false]],[[0,4]],"hola"]],,,[],2]
 
-//or
+// this code get a minimal and simple response of google engine
 		
 Translator trans = Translator.getInstance();
 String text = "hola";
@@ -56,6 +57,18 @@ System.out.println(trans.translate(text, "es", "en"));
 
 // console output
 hi there
+
+// this  code converts the string to a sound
+Audio audio = Audio.getInstance();
+InputStream sound = audio.getAudio("Hello Richard","en");
+audio.play(sound);
+
+// this  code converts the string to a sound mp3 file
+Audio audio = Audio.getInstance();
+InputStream sound = audio.getAudio("Hola Richard","es");
+OutputStream out =  new FileOutputStream(new File("test_file.mp3"));
+IOUtils.copy(sound,out);
+
 ```
 
 

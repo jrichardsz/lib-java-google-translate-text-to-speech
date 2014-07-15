@@ -23,6 +23,7 @@ The application in the future will provide the following functions
 ## Usage
 
 
+```java
 //required values
 String enableProxy = "false";
 String proxy = "my.proxy.com";
@@ -48,8 +49,10 @@ System.out.println(trans.translateAsJsonString(text, "es", "en"));
 Translator trans = Translator.getInstance();
 String text = "hola";
 System.out.println(trans.translate(text, "es", "en"));
+
 // console output
 hi there
+```
 
 
 ##Changelog

@@ -1,43 +1,24 @@
-#Super Translator
+#fork-java-google-translate-text-to-speech
 
-This is the project that translates from English <---> Spanish in a fast using java and google. 
+A fork of proyect java-google-translate-text-to-speech on http://code.google.com/p/java-google-translate-text-to-speech/
 
 ## Description
 
-Tired of slow open an application to translate a word?
-Too long to launch the browser and go to translator to translate a letter?
+Because the library google was not very usable, I decided to improve it!
 
-This application is designed to simply and quickly translate. Using the translation engines created by Google.
-Itself does not use the library provided by google:
-http://code.google.com/p/java-google-translate-text-to-speech/
-What it does is use the url directly:
-http://translate.google.com.pe ... and send parameters.
-In later versions are thought to use the library provided by google.
+## Characteristics
 
-Since it uses the Google translation engine, this application needs and an internet connection.
-
-Fast Translator will help you translate words and phrases instantly.
-
-Practically if you think of a word, this already translated!
+  * Use google engine.
 
 ##Features
-The app currently provides the following functionality,
+The api currently provides the following functionality,
 
-  * Quick translation.
-  * Recognizes the clipboard to translate the copied.
-  * Plays the translated text.
-  * Based on Java technology.
-  * Based on the technology of google translator.
-  * Very practical Keyboard Shortcuts.
+  * Simple and fast text translation.
+  * Simple and fast text to speech (play sound or save to file)
   
 The application in the future will provide the following functions
 
-   * Support for more languages??.
-   * Keyboard Shortcuts to focus and manage the application.
-   * Speech Recognition to translate.
-   * Insert Google API in full.
-   * Many more that the community can provide.
-
+   * Support commandline arguments.
 
 
 ##Changelog

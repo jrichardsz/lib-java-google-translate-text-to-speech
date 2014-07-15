@@ -1,6 +1,6 @@
 #fork-java-google-translate-text-to-speech
 
-A fork of proyect java-google-translate-text-to-speech on http://code.google.com/p/java-google-translate-text-to-speech/
+A fork and improvement of proyect java-google-translate-text-to-speech TTS. http://code.google.com/p/java-google-translate-text-to-speech/
 
 ## Description
 

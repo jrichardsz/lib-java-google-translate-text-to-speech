@@ -43,6 +43,12 @@ public class Translator {
 	public JSONArray translateAsJsonArray(String text, String languageInput, String languageOutput) throws Exception {
 		
 		String strTransJson = translateAsJsonString(text, languageInput, languageOutput); 
+		
+		return parseStringToJsonArrayObject(strTransJson);
+	}
+	
+	public JSONArray parseStringToJsonArrayObject(String strTransJson) throws Exception {
+		
 		JSONParser parser = new JSONParser();
 		JSONArray jsonArray = (JSONArray) parser.parse(strTransJson);
 		
@@ -51,16 +57,25 @@ public class Translator {
 	
 	public String translate(String text, String languageInput, String languageOutput) throws Exception {
 
-		JSONArray jsonArray = translateAsJsonArray(text, languageInput, languageOutput);
+		JSONArray jsonArrayGoogleResponse = translateAsJsonArray(text, languageInput, languageOutput);
+		
+		return extractPayloadTranslationFromJsonArrayObject(jsonArrayGoogleResponse);
+
+	}
 	
-		JSONArray element1 = (JSONArray) jsonArray.get(0);
+	/* JSONArray jsonArrayGoogleResponse is : 
+	 * [[["hello","hola","",""]],,"es",,[["hello",[1],true,false,550,0,1,0]],[["hola",1,[["hello",550,true,false],["hi",449,true,false],["Hola",0,true,false],["Hey",0,true,false]],[[0,4]],"hola"]],,,[["es"]],15]
+	 */
+	public String extractPayloadTranslationFromJsonArrayObject(JSONArray jsonArrayGoogleResponse) throws Exception {
+		
+		JSONArray element1 = (JSONArray) jsonArrayGoogleResponse.get(0);
 		JSONArray element1_1 = (JSONArray) element1.get(0);
 		
 		String elementTranslate = (String) element1_1.get(0);
 		
 		return elementTranslate;
 
-	}	
+	}
 
 	public String detect(String text) throws Exception {
 
